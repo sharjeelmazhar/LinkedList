@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0", // Specifies the version of the launch configuration format
+    "configurations": [
+        {
+            "name": "C++: g++ build and debug active file", // The name of the debug configuration
+            "type": "cppdbg", // Specifies the debugger type, here it's C++ debug
+            "request": "launch", // Indicates that this configuration is for launching a program
+            "program": "${workspaceFolder}/linkedlist", // The path to the executable to debug
+            "args": [], // Command line arguments to pass to the program
+            "stopAtEntry": false, // If true, the debugger stops at the entry point of the program
+            "cwd": "${workspaceFolder}", // Sets the current working directory for the program
+            "environment": [], // Environment variables to set during the debugging session
+            "externalConsole": false, // If true, uses an external console for the program output
+            "MIMode": "gdb", // Specifies the debugger to use, here it's GDB
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb", // Description of the setup command
+                    "text": "-enable-pretty-printing", // Command to enable GDB pretty-printing
+                    "ignoreFailures": true // Continue even if this setup command fails
+                }
+            ],
+            "preLaunchTask": "build", // Specifies a task to run before launching the debugger
+            "miDebuggerPath": "/usr/bin/gdb", // Path to the GDB debugger
+            "logging": {
+                "engineLogging": false // If true, enables logging for the debugging engine
+            },
+            "internalConsoleOptions": "openOnSessionStart" // Uses the internal debug console and opens it when the session starts
+        }
+    ]
+}

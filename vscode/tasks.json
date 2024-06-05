@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0", // Specifies the version of the tasks configuration
+    "tasks": [
+        {
+            "label": "build", // The label of the task; you can refer to this label in other configurations
+            "type": "shell", // Indicates that the task will be run in a shell
+            "command": "g++", // The shell command to execute, in this case, the GNU C++ compiler
+            "args": [
+                "main.cpp", // List of source files to compile
+                "LinkedList.cpp",
+                "Node.cpp",
+                "-o", // Specifies the output file
+                "linkedlist", // The name of the output executable
+                "-g" // Include debugging information in the executable
+            ],
+            "group": {
+                "kind": "build", // Indicates this task is part of the build group
+                "isDefault": true // Makes this task the default build task
+            },
+            "problemMatcher": [
+                "$gcc"
+            ], // Integrates GCC error messages with the VS Code Problems panel
+            "detail": "Build the project" // An optional description for the task
+        }
+    ]
+}
